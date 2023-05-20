@@ -1,5 +1,6 @@
 package com.next.controller;
 
+import com.next.model.SysUser;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -41,7 +42,12 @@ public class AdminController {
     }
 
     // 在登录页面执行登录操作（之后也要跳转页面）
-
+    @RequestMapping("/mockLogin.page")
+    public void mockLogin(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+        SysUser sysUser = SysUser.builder().id(1).username("admin").build();
+        request.getSession().setAttribute("user", sysUser);
+        response.sendRedirect("/admin/index.page");
+    }
 
     // 登录成功后进入管理员首页
     @RequestMapping("/admin/index.page")
