@@ -1,20 +1,16 @@
 package com.next.dto;
 
-import com.next.model.TrainNumberDetail;
+import com.next.model.TrainNumber;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
 @ToString
-public class TrainNumberDetailDto extends TrainNumberDetail {
+public class TrainNumberDto extends TrainNumber {
     @Getter
     @Setter
     private String fromStation;
     @Getter
     @Setter
     private String toStation;
-
-    @Getter
-    @Setter
-    private String trainNumber;
 }
