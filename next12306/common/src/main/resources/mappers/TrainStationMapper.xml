@@ -73,4 +73,15 @@
         <include refid="Base_Column_List"></include>
         from train_station
   </select>
+  <select id="countByAndNameAndCityId" parameterType="map" resultType="int">
+select count(1)
+from train_station
+where name=#{name}
+and city_id=#{cityId}
+<if test="stationId!=null">
+  AND id !=#{stationId}
+</if>
+
+
+  </select>
 </mapper>

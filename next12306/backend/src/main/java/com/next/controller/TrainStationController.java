@@ -4,6 +4,7 @@ import com.next.common.JsonData;
 import com.next.dto.TrainStationDto;
 import com.next.model.TrainCity;
 import com.next.model.TrainStation;
+import com.next.param.TrainStationParam;
 import com.next.service.TrainCityService;
 import com.next.service.TrainStationService;
 import org.springframework.stereotype.Controller;
@@ -23,6 +24,7 @@ public class TrainStationController {
     private TrainCityService trainCityService;
     @Resource
     private TrainStationService trainStationService;
+
     @RequestMapping("/list.page")
     public ModelAndView page() {
         return new ModelAndView("trainStation");
@@ -51,14 +53,19 @@ public class TrainStationController {
 
     @RequestMapping("/save.json")
     @ResponseBody
-    public JsonData save() {
+    public JsonData save(TrainStationParam trainStationParam) {
+
+        trainStationService.save(trainStationParam);
+
         return JsonData.success();
     }
 
     @RequestMapping("/update.json")
     @ResponseBody
 
-    public JsonData update() {
+    public JsonData update(TrainStationParam trainStationParam) {
+        trainStationService.update(trainStationParam);
+
         return JsonData.success();
     }
 }
