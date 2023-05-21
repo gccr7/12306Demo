@@ -4,6 +4,7 @@ import com.next.common.JsonData;
 import com.next.dto.TrainNumberDto;
 import com.next.model.TrainNumber;
 import com.next.model.TrainStation;
+import com.next.param.TrainNumberParam;
 import com.next.service.TrainNumberService;
 import com.next.service.TrainStationService;
 import org.springframework.stereotype.Controller;
@@ -59,14 +60,19 @@ public class TrainNumberController {
 
     @RequestMapping("/save.json")
     @ResponseBody
-    public JsonData save() {
+    public JsonData save(TrainNumberParam param) {
+        trainNumberService.save(param);
+
+
         return JsonData.success();
     }
 
     @RequestMapping("/update.json")
     @ResponseBody
 
-    public JsonData update() {
+    public JsonData update(TrainNumberParam param) {
+        trainNumberService.update(param);
+
         return JsonData.success();
     }
 }

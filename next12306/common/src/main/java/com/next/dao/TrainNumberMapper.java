@@ -2,6 +2,7 @@ package com.next.dao;
 
 import com.next.model.TrainNumber;
 import com.next.model.TrainStation;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -19,4 +20,6 @@ public interface TrainNumberMapper {
     int updateByPrimaryKey(TrainNumber record);
 
     List<TrainNumber>getAll();
+
+    TrainNumber findByName(@Param("name") String name);
 }
