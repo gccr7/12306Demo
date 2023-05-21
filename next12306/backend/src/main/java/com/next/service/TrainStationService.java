@@ -76,5 +76,14 @@ public class TrainStationService {
         return trainStationMapper.countByAndNameAndCityId(name, stationId, cityId)>0;
     }
 
+public  Integer getCityIdByStationId(int stationId){
+    TrainStation trainStation = trainStationMapper.selectByPrimaryKey(stationId);
 
+    if(trainStation ==null){
+        throw new BusinessException("站点不存在");
+
+    }
+    return  trainStation.getCityId();
+
+}
 }
