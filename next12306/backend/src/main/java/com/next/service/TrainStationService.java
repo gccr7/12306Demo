@@ -13,6 +13,8 @@ public class TrainStationService {
     private TrainStationMapper trainStationMapper;
 
     public List<TrainStation> getAll() {
-        return trainStationMapper.getAll();
+        List<TrainStation> trainStations = trainStationMapper.getAll();
+
+        return trainStations;
     }
 }

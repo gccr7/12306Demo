@@ -44,7 +44,9 @@ public class AdminController {
     // 在登录页面执行登录操作（之后也要跳转页面）
     @RequestMapping("/mockLogin.page")
     public void mockLogin(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        SysUser sysUser = SysUser.builder().id(1).username("admin").build();
+        SysUser sysUser = new SysUser();
+        sysUser.setId(1);
+        sysUser.setUsername("admin");
         request.getSession().setAttribute("user", sysUser);
         response.sendRedirect("/admin/index.page");
     }

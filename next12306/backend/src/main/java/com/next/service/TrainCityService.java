@@ -13,6 +13,7 @@ public class TrainCityService {
     private TrainCityMapper trainCityMapper;
 
     public List<TrainCity> getAll() {
-        return trainCityMapper.getAll();
+        List<TrainCity> trainCityList = trainCityMapper.getAll();
+        return trainCityList;
     }
 }

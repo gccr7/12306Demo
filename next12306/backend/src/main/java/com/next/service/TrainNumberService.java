@@ -13,7 +13,9 @@ public class TrainNumberService {
     private TrainNumberMapper trainNumberMapper;
 
     public List<TrainNumber> getAll() {
-        return trainNumberMapper.getAll();
+        List<TrainNumber> trainNumbers = trainNumberMapper.getAll();
+
+        return trainNumbers;
 
     }
 }
