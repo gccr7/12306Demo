@@ -1,6 +1,9 @@
 package com.next.dao;
 
 import com.next.model.TrainNumberDetail;
+import com.next.model.TrainStation;
+
+import java.util.List;
 
 public interface TrainNumberDetailMapper {
     int deleteByPrimaryKey(Integer id);
@@ -14,4 +17,6 @@ public interface TrainNumberDetailMapper {
     int updateByPrimaryKeySelective(TrainNumberDetail record);
 
     int updateByPrimaryKey(TrainNumberDetail record);
+
+    List<TrainNumberDetail>getAll();
 }

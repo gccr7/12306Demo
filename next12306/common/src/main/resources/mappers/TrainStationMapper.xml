@@ -68,4 +68,9 @@
       city_id = #{cityId,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <select id="getAll" resultMap="BaseResultMap">
+    select
+        <include refid="Base_Column_List"></include>
+        from train_station
+  </select>
 </mapper>
