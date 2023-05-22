@@ -1,6 +1,8 @@
 package com.next.orderDao;
 
 import com.next.model.TrainOrder;
+import org.apache.ibatis.annotations.Mapper;
+
 
 public interface TrainOrderMapper {
     int deleteByPrimaryKey(Long id);
