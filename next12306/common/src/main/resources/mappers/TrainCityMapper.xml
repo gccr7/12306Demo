@@ -63,4 +63,13 @@
         from train_city
 
     </select>
+    <select id="countByNameAndId" parameterType="map" resultType="int">
+        select count(1)
+        from train_city
+        where name = #{name}
+        <if test="trainCityId !=null">
+            And id !=#{trainCityId}
+        </if>
+    </select>
+
 </mapper>

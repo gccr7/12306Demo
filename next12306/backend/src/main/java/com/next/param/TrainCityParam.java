@@ -1,5 +1,6 @@
 package com.next.param;
 
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -8,6 +9,7 @@ import org.hibernate.validator.constraints.NotBlank;
 @Getter
 @Setter
 @ToString
+@Builder
 public class TrainCityParam {
     private Integer id;
 

@@ -1,6 +1,7 @@
 package com.next.controller;
 
 import com.next.common.JsonData;
+import com.next.param.TrainCityParam;
 import com.next.service.TrainCityService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,14 +28,17 @@ public class TrainCityController {
 
     @RequestMapping("/save.json")
     @ResponseBody
-    public JsonData save() {
+    public JsonData save(TrainCityParam param) {
+        trainCityService.save(param);
         return JsonData.success();
     }
 
     @RequestMapping("/update.json")
     @ResponseBody
 
-    public JsonData update() {
+    public JsonData update(TrainCityParam param) {
+        trainCityService.update( param );
+
         return JsonData.success();
     }
 

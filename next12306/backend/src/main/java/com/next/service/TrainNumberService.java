@@ -1,5 +1,4 @@
 package com.next.service;
-
 import com.next.dao.TrainNumberMapper;
 import com.next.model.TrainNumber;
 import org.springframework.stereotype.Service;
