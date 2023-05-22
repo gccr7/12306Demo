@@ -81,11 +81,6 @@
 			<version>19.0</version>
 		</dependency>
 
-		<dependency>
-			<groupId>com.next</groupId>
-			<artifactId>common</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
 
 		<!-- jackson -->
 		<dependency>
@@ -114,6 +109,12 @@
 					<artifactId>junit-vintage-engine</artifactId>
 				</exclusion>
 			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>com.next</groupId>
+			<artifactId>common</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
 
