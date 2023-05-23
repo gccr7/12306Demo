@@ -13,7 +13,7 @@ import javax.validation.constraints.NotNull;
 public class GenerateTicketParam {
     @NotNull(message = "车次不可以为空")
     private  Integer trainNumberId;
-    @NotBlank(message = "必须是发车时间")
+    //@NotBlank(message = "必须是发车时间")
     private String fromTime;
 
 
