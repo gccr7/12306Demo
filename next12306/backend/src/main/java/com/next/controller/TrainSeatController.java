@@ -7,6 +7,7 @@ import com.next.dto.TrainSeatDto;
 import com.next.model.TrainSeat;
 import com.next.model.TrainStation;
 import com.next.param.GenerateTicketParam;
+import com.next.param.PublishTicketParam;
 import com.next.param.TrainSeatSearchParam;
 import com.next.service.TrainSeatService;
 import com.next.service.TrainStationService;
@@ -84,6 +85,12 @@ public class TrainSeatController {
     @ResponseBody
     public JsonData generate(GenerateTicketParam param) {
         trainSeatService.generate(param);
+        return JsonData.success();
+    }
+    @RequestMapping("/publish.json")
+    @ResponseBody
+    public JsonData publish(PublishTicketParam param) {
+        trainSeatService.publish(param);
         return JsonData.success();
     }
 }
