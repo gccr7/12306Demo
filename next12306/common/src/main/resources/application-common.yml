@@ -1,0 +1,49 @@
+spring:
+  datasource-master:
+    type: com.zaxxer.hikari.HikariDataSource  serverTimezone=GMT%2B8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    jdbc-url: jdbc:mysql://localhost:3306/test1?serverTimezone=GMT%2B8&useSSL=false&useUnicode=true&connectTimeout=1000&socketTimeout=60000&allowMultiQueries=true
+    username: nacos
+    password: nacos
+  datasource-slave:
+      type: com.zaxxer.hikari.HikariDataSource
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      jdbc-url: jdbc:mysql://localhost:3306/test1?serverTimezone=GMT%2B8&useSSL=false&useUnicode=true&connectTimeout=1000&socketTimeout=60000&allowMultiQueries=true
+      username: nacos
+      password: nacos
+  datasource-order:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    jdbc-url: jdbc:mysql://localhost:3306/t_train_order?serverTimezone=GMT%2B8&useSSL=false&useUnicode=true&connectTimeout=1000&socketTimeout=60000&allowMultiQueries=true
+    username: nacos
+    password: nacos
+  datasource-seat1:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    jdbc-url: jdbc:mysql://localhost:3306/t_train_seat_1?serverTimezone=GMT%2B8&useSSL=false&useUnicode=true&connectTimeout=1000&socketTimeout=60000&allowMultiQueries=true
+    username: nacos
+    password: nacos
+  datasource-seat2:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    jdbc-url: jdbc:mysql://localhost:3306/t_train_seat_2?serverTimezone=GMT%2B8&useSSL=false&useUnicode=true&connectTimeout=1000&socketTimeout=60000&allowMultiQueries=true
+    username: nacos
+    password: nacos
+  datasource-seat3:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    jdbc-url: jdbc:mysql://localhost:3306/t_train_seat_3?serverTimezone=GMT%2B8&useSSL=false&useUnicode=true&connectTimeout=1000&socketTimeout=60000&allowMultiQueries=true
+    username: nacos
+    password: nacos
+  datasource-seat4:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    jdbc-url: jdbc:mysql://localhost:3306/t_train_seat_4?serverTimezone=GMT%2B8&useSSL=false&useUnicode=true&connectTimeout=1000&socketTimeout=60000&allowMultiQueries=true
+    username: nacos
+    password: nacos
+  datasource-seat5:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    jdbc-url: jdbc:mysql://localhost:3306/t_train_seat_5?serverTimezone=GMT%2B8&useSSL=false&useUnicode=true&connectTimeout=1000&socketTimeout=60000&allowMultiQueries=true
+    username: nacos
+    password: nacos
