@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class TestController {
-    @RequestMapping("/test1")
+    @RequestMapping("/test")
     @ResponseBody
     public JsonData test() {
         return  JsonData.success();
