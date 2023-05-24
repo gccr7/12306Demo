@@ -28,31 +28,31 @@ import java.util.concurrent.ConcurrentHashMap;
 public class SeatDataSourceConfig {
 
     @Bean(name = DataSources.TRAIN_SEAT_DB_1)
-    @ConfigurationProperties(prefix = "spring.datasource-seat-1")
+    @ConfigurationProperties(prefix = "spring.datasource-seat1")
     public DataSource trainSeatDB1() {
         return DataSourceBuilder.create().build();
     }
 
     @Bean(name = DataSources.TRAIN_SEAT_DB_2)
-    @ConfigurationProperties(prefix = "spring.datasource-seat-2")
+    @ConfigurationProperties(prefix = "spring.datasource-seat2")
     public DataSource trainSeatDB2() {
         return DataSourceBuilder.create().build();
     }
 
     @Bean(name = DataSources.TRAIN_SEAT_DB_3)
-    @ConfigurationProperties(prefix = "spring.datasource-seat-3")
+    @ConfigurationProperties(prefix = "spring.datasource-seat3")
     public DataSource trainSeatDB3() {
         return DataSourceBuilder.create().build();
     }
 
     @Bean(name = DataSources.TRAIN_SEAT_DB_4)
-    @ConfigurationProperties(prefix = "spring.datasource-seat-4")
+    @ConfigurationProperties(prefix = "spring.datasource-seat4")
     public DataSource trainSeatDB4() {
         return DataSourceBuilder.create().build();
     }
 
     @Bean(name = DataSources.TRAIN_SEAT_DB_5)
-    @ConfigurationProperties(prefix = "spring.datasource-seat-5")
+    @ConfigurationProperties(prefix = "spring.datasource-seat5")
     public DataSource trainSeatDB5() {
         return DataSourceBuilder.create().build();
     }

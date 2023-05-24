@@ -15,7 +15,7 @@ import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import javax.sql.DataSource;
 
 @Configuration
-@MapperScan(basePackages = "con.next.orderDao", sqlSessionTemplateRef = "orderSqlSessionTemplate")
+@MapperScan(basePackages = "com.next.orderDao", sqlSessionTemplateRef = "orderSqlSessionTemplate")
 public class OrderDataSourceConfig {
     @Bean(name = DataSources.TRAIN_ORDER_DB)
     @ConfigurationProperties(prefix = "spring.datasource-order")
