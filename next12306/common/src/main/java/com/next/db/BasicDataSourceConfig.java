@@ -2,6 +2,7 @@ package com.next.db;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
+import com.zaxxer.hikari.HikariDataSource;
 import io.shardingsphere.api.algorithm.masterslave.RoundRobinMasterSlaveLoadBalanceAlgorithm;
 import io.shardingsphere.api.config.rule.MasterSlaveRuleConfiguration;
 import io.shardingsphere.shardingjdbc.api.MasterSlaveDataSourceFactory;
@@ -9,7 +10,6 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.mybatis.spring.annotation.MapperScan;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.jdbc.DataSourceBuilder;
@@ -28,11 +28,13 @@ import java.util.Properties;
 @MapperScan(basePackages = "com.next.dao", sqlSessionTemplateRef = "sqlSessionTemplate")
 public class BasicDataSourceConfig {
 
+
     @Primary
     @Bean(name = DataSources.MASTER_DB)
     @ConfigurationProperties(prefix = "spring.datasource-master")
     public DataSource masterDB() {
-        return DataSourceBuilder.create().build();
+        DataSource build = DataSourceBuilder.create().build();
+        return build;
     }
 
     @Bean(name = DataSources.SLAVE_DB)
@@ -41,10 +43,7 @@ public class BasicDataSourceConfig {
         return DataSourceBuilder.create().build();
     }
 
-
-    //@Bean(name = "masterSlaveDataSource")
-    @Qualifier("masterSlaveDataSource")
-    @Autowired
+    @Bean(name = "masterSlaveDataSource")
     public DataSource masterSlaveDataSource(@Qualifier(DataSources.MASTER_DB) DataSource masterDB,
                                             @Qualifier(DataSources.SLAVE_DB) DataSource slaveDB) throws SQLException{
         Map<String, DataSource> map = Maps.newHashMap();
@@ -64,7 +63,8 @@ public class BasicDataSourceConfig {
     @Primary
     @Bean
     public DataSourceTransactionManager transactionManager(@Qualifier(DataSources.MASTER_DB) DataSource masterDB) {
-        return new DataSourceTransactionManager(masterDB);
+        DataSourceTransactionManager dataSourceTransactionManager = new DataSourceTransactionManager(masterDB);
+        return dataSourceTransactionManager;
     }
 
     @Primary

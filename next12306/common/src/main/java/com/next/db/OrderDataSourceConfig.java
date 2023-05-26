@@ -35,7 +35,7 @@ public class OrderDataSourceConfig {
     public SqlSessionFactory orderSqlSessionFactory(@Qualifier(DataSources.TRAIN_ORDER_DB) DataSource orderDB) throws Exception {
         SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
         bean.setDataSource(orderDB);
-        bean.setMapperLocations(new PathMatchingResourcePatternResolver().getResources("classpath:orderMappers/*.xml"));
+        bean.setMapperLocations(new PathMatchingResourcePatternResolver().getResources("classpath:orderMappers\\*.xml"));
         return bean.getObject();
 
     }
